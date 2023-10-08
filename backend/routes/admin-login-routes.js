@@ -1,0 +1,17 @@
+import express from "express";
+import { login,defaultPassword,resetAdminPassword } from "../controllers/admin-login-controller";
+import { getAllProjects,getIdProjects,getTitleProjects,getDomainProjects } from "../controllers/project-controller";
+import { getAllRegistrations,resetVolunteerPassword } from "../controllers/volunteer-controller";
+import { getAllVotings } from "../controllers/voting-controller";
+const admin_login_router=express.Router();
+admin_login_router.post("/login",login);
+admin_login_router.post("/defaultpassword",defaultPassword);
+admin_login_router.post("/resetpassword",resetAdminPassword);
+admin_login_router.get("/projects/all",getAllProjects);
+admin_login_router.get("/projects/id",getIdProjects);
+admin_login_router.get("/projects/title",getTitleProjects);
+admin_login_router.get("/projects/domain",getDomainProjects);
+admin_login_router.get("/volunteer/all",getAllRegistrations);
+admin_login_router.post("/volunteer/reset",resetVolunteerPassword);
+admin_login_router.get("/voting/all",getAllVotings);
+export default admin_login_router;
