@@ -10,7 +10,7 @@ app.use("/admin",admin_login_router);
 app.use("/projects",project_router);
 app.use("/volunteer",volunteer_router);
 app.use("/voting",voting_router);
-mongoose.connect("mongodb+srv://admin:admin@cluster0.nnz6qgl.mongodb.net/VMS")
+mongoose.connect("mongodb+srv://admin:nimda@cluster0.nnz6qgl.mongodb.net/VMS")
 .then(() => app.listen(8000))
 .then(() => console.log("Securely connected to MongoDB and listening to port 8000"))
 .catch((err) => console.log(err));
